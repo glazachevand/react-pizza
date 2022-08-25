@@ -55,7 +55,7 @@ const Home: React.FC = () => {
 
   // если рендер первый, то проверяем есть ли URL параметры и сохраняем в redux
   React.useEffect(() => {
-    if (window.location.search) {
+    if (window.location.hash.includes('?')) {
       const params = Object.fromEntries(new URLSearchParams(searchParams));
       const sort = sortList.find((obj) => obj.sortProperty === params.sortProperty);
 
