@@ -1,0 +1,70 @@
+.pizza {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+
+  &__image {
+    max-width: 400px;
+  }
+  &__title2 {
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  &__price {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  &__title3 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  &__description {
+    font-size: 26px;
+    text-align: justify;
+    margin-bottom: 40px;
+  }
+  &__selector {
+    margin: 0 auto 20px;
+    display: flex;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    flex-direction: column;
+    padding: 6px;
+    width: 400px;
+    ul {
+      display: flex;
+      flex: 1;
+      &:first-of-type {
+        margin-bottom: 6px;
+      }
+      li {
+        padding: 8px;
+        flex: 1;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 14px;
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 400px;
+  }
+  &__price {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.015em;
+  }
+  :global {
+    .active {
+      background: #ffffff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+      border-radius: 5px;
+      cursor: auto;
+    }
+  }
+}
