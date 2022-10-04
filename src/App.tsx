@@ -7,7 +7,11 @@ import Loadable from 'react-loadable';
 
 const Cart = Loadable({
   loader: () => import(/*webpackChunkName: "Cart"*/ './pages/Cart'),
-  loading: () => <div>Загрузка корзины...</div>,
+  loading: () => (
+    <div className="content__loader">
+      <span></span>
+    </div>
+  ),
 });
 
 const FullPizza = React.lazy(() => import(/*webpackChunkName: "FullPizza"*/ './pages/FullPizza'));
@@ -17,12 +21,17 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
+        <Route path="" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route
           path="/pizza/:id"
           element={
-            <Suspense fallback={<div>Загрузка...</div>}>
+            <Suspense
+              fallback={
+                <div className="content__loader">
+                  <span></span>
+                </div>
+              }>
               <FullPizza />
             </Suspense>
           }
@@ -30,7 +39,12 @@ function App() {
         <Route
           path="*"
           element={
-            <Suspense fallback={<div>Загрузка...</div>}>
+            <Suspense
+              fallback={
+                <div className="content__loader">
+                  <span></span>
+                </div>
+              }>
               <NotFound />
             </Suspense>
           }

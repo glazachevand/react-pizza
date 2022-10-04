@@ -40,6 +40,52 @@ body {
     }
   }
 
+  &__loader {
+    position: relative;
+    margin: 50px auto 100px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #fdbb11;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: -5px -5px 5px hsla(0, 0%, 100%, 0.1), 10px 10px 10px rgba(0, 0, 0, 0.4),
+      inset -5px -5px 5px rgba(255, 255, 255, 0.2), inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      z-index: 10;
+      background: #fff;
+      border-radius: 50%;
+      border: 2px solid #fdbb11;
+      box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2), inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    span {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-image: linear-gradient(-225deg, #fd8d5f 0%, #fdbb11 50%, #ffdf8c 100%);
+
+      filter: blur(20px);
+      animation: animate 0.5s linear infinite;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
   &__title {
     font-weight: 800;
     font-size: 38px;

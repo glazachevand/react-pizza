@@ -67,7 +67,11 @@ export const FullPizzaBlock: React.FC<FullPizzaBlockProps> = ({ id }) => {
   }, []);
 
   if (!pizza) {
-    return <>Загрузка...</>;
+    return (
+      <div className="content__loader">
+        <span></span>
+      </div>
+    );
   }
 
   return (
